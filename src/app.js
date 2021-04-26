@@ -24,7 +24,9 @@ const Users = db.users;
 db.sequelize.sync({force: false , alter : true}).then(() => {
     console.log('Drop and Resync with { force: true }');
   });
-
+app.get('/', (req, res) => {
+  res.send('Welcome to NODE JS AWS...')
+});
 users.usersRoutes(app);
 
 app.listen(port, () => {
